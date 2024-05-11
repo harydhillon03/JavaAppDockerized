@@ -7,14 +7,14 @@ spec:
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: guestbook-ui
+      app: vg-argo1
   template:
     metadata:
       labels:
-        app: guestbook-ui
+        app: vg-argo1
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-        name: guestbook-ui
+      - image: nginx
+        name: vg-argo1
         ports:
         - containerPort: 80
