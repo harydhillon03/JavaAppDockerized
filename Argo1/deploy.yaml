@@ -2,19 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vg-deployment
-  namespace: default
 spec:
-  replicas: 3
+  replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: my-app
+      app: guestbook-ui
   template:
     metadata:
       labels:
-        app: my-app
+        app: guestbook-ui
     spec:
       containers:
-      - name: my-container
-        image: 381492200529.dkr.ecr.us-east-1.amazonaws.com/project1-ecr:8
-      imagePullSecrets:
-        - name: ecr-registry
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        name: guestbook-ui
+        ports:
+        - containerPort: 80
