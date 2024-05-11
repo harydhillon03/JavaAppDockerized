@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-deployment
+  name: myhk-deployment
   namespace: default
 spec:
   replicas: 3
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: my-container
-        image: 730335201364.dkr.ecr.us-east-1.amazonaws.com/super30_ecr_registry_1:3
+        image: 730335201364.dkr.ecr.us-east-1.amazonaws.com/super30_ecr_registry_1:7
       imagePullSecrets:
         - name: ecr-registry
